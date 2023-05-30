@@ -1,0 +1,15 @@
+FROM centos:7   # Use a base image with centOS
+
+# Install Java Development Kit (JDK) and C++ compiler (g++)
+RUN yum update -y && \
+    yum install -y openjdk-11-jdk build-essential
+
+WORKDIR /app  # Set the working directory
+
+COPY . /app   # Copy the local files such as Java and C++ source code to the directory of /app
+
+RUN javac Main.java   # Compile Java code
+
+RUN g++ -o main main.cpp   # Compile C++ code
+
+CMD ["java", "Main"]  # Same as run command of "java main".
