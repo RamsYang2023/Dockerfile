@@ -1,4 +1,4 @@
-FROM centos:7   # Use a base image with centOS
+FROM centos:7   # Use a base image with centOS. if us Ubuntu base image, the following "yum" should be replaced by "apt-get".
 
 # Install Java Development Kit (JDK) and C++ compiler (g++)
 RUN yum update -y && \
